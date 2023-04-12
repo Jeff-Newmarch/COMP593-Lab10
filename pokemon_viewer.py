@@ -33,7 +33,8 @@ frame.columnconfigure(0, weight=1)
 frame.rowconfigure(0, weight=1)
 
 # Adding image to the frame
-img_poke = PhotoImage(file=os.path.join(script_dir,'pokemon_ball.png'))
+image_path = os.path.join(script_dir,'pokemon_ball.png')
+img_poke = PhotoImage(file=image_path)
 lbl_poke_image = ttk.Label(frame, image=img_poke)
 lbl_poke_image.grid(row=0, column=0)
 
@@ -58,7 +59,6 @@ cbox_poke_names.bind('<<ComboboxSelected>>', handle_pokemon_sel)
 
 # Set as Desktop button
 btn_set_desktop = ttk.Button(frame, text='Set as Desktop Image')
-image_path = handle_pokemon_sel
 image_lib.set_desktop_background_image(image_path)
 btn_set_desktop.grid(row=2, column=0,padx=10, pady=10)
 
