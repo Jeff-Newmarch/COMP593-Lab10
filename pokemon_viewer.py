@@ -61,8 +61,10 @@ cbox_poke_names.bind('<<ComboboxSelected>>', handle_pokemon_sel)
 btn_set_desktop = ttk.Button(frame, text='Set as Desktop Image')
 image_lib.set_desktop_background_image(image_path)
 btn_set_desktop.grid(row=2, column=0,padx=10, pady=10)
-
-
+if cbox_poke_names.bind('<<ComboboxSelected>>', handle_pokemon_sel) is True:
+    btn_set_desktop.state(['!disabled'])
+else:
+    btn_set_desktop.state(['disabled'])
 
 
 root.mainloop()
